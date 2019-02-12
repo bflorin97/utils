@@ -1,0 +1,6 @@
+<div class="parent" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="1" [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()" (scrolledUp)="onScrollUp()" [scrollWindow]="false">
+  <ul *ngFor="let item of items">
+    {{ item.value }}
+  </ul>
+</div>
