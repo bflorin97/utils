@@ -1,0 +1,49 @@
+
+.list {
+    height: 12rem;
+    overflow: auto;
+    margin: 0 auto;
+    margin: 10rem auto;
+    background: bisque;
+
+    &__row {
+        float: left;
+        margin: 2rem;
+    }
+}
+
+.tooltip {
+    position: absolute;
+
+    &::before {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+
+        background: rgba(0,0,0,.75);
+        border-radius: 5px;
+        color: #fff;
+        content: attr(data-tooltip);
+        top: attr(top);
+        padding: 6px 10px;
+        top: 26px;
+        word-wrap: break-word;
+        min-width: 10rem;
+        max-width: 20rem;
+        min-height: 10rem;
+        z-index: 10;
+        text-align: center;
+    }
+
+    &__fade::before {
+        transform: translate3d(0,-10px,0);
+        transition: all .15s ease-in-out;
+    }
+    &__fade:hover::before {
+        opacity: 1;
+        position: absolute;
+        display: inline;
+        transform: translate3d(0,0,0);
+    }
+}

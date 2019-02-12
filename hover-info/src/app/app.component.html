@@ -1,0 +1,10 @@
+<div class="list">
+  <div *ngFor="let item of list">
+    <div class="list__row">
+      <div class="tooltip {{ item.column3.toString().length > 16 ? 'tooltip__fade' : '' }}" attr.data-tooltip="{{ item.column2 }}">
+        {{ item.column2.toString().length > 16 ? item.column2.toString().slice(0, 13) + '...' : item.column2 }}</div>
+      <div class="list__column">{{ item.column3 }}</div>
+      <div class="list__column">{{ item.column4 }}</div>
+    </div>
+  </div>
+</div>
